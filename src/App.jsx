@@ -23,6 +23,9 @@ function App({ minDamage = 0, maxDamage = 50 }) {
     setPlayerHealth(newPlayerHealth);
     setEnemyHealth(newEnemyHealth);
 
+    console.log(
+      `player health: ${newPlayerHealth} enemy health: ${newEnemyHealth}`
+    );
     if (newPlayerHealth === 0 && newEnemyHealth === 0) {
       setGameStatus("draw");
     } else if (newEnemyHealth === 0) {
@@ -56,7 +59,7 @@ function App({ minDamage = 0, maxDamage = 50 }) {
 
     if (health === INITIAL_HEALTH) {
       emoji = "❤️";
-    } else if ((health = 0)) {
+    } else if (health === 0) {
       emoji = "💀";
     } else {
       emoji = "🧡";
